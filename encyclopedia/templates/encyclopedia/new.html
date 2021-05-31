@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create new entry
+{% endblock %}
+
+{% block body %}
+    <h1>Create new entry</h1>
+    <div class="alert alert-danger" role="alert" style="{{ alert }}">
+        Entry already exists!
+    </div>
+    <form class="newentry" action="new" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save">
+    </form>
+
+{% endblock %}
